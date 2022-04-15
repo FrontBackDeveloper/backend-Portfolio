@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class PersonaController {
     
     @Autowired 
-    
     private IPersonaService interPersona;
     
     @GetMapping ("/personas/traer")
