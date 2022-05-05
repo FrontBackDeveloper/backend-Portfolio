@@ -13,5 +13,5 @@ public interface IRedesSocialesService {
     
     public void deleteRedesSociales (Long id);
     
-    public RedesSociales findRedesSociales (Long id);    
+    public void modificarRedesSociales (RedesSociales red);   
 }

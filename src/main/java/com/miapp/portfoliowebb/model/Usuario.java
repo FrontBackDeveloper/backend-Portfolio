@@ -14,7 +14,7 @@ import lombok.Setter;
 @Entity
 
 public class Usuario {
-     @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     

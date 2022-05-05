@@ -22,11 +22,13 @@ public class Proyectos {
     private String herramientas;
     private String estado;
     private String imagen;
+     private String url;
 
     public Proyectos() {
     }
 
-    public Proyectos(long id, String titulo, String tipo, String creado, String herramientas, String estado, String imagen) {
+    public Proyectos(long id, String titulo, String tipo, String creado,
+                     String herramientas, String estado, String imagen, String url) {
         this.id = id;
         this.titulo = titulo;
         this.tipo = tipo;
@@ -34,6 +36,7 @@ public class Proyectos {
         this.herramientas = herramientas;
         this.estado = estado;
         this.imagen = imagen;
+        this.imagen = url;
     }
     
     

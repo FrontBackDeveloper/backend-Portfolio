@@ -13,5 +13,5 @@ public interface IAcercadeService {
     
     public void deleteAcercade (Long id);
     
-    public Acercade findAcercade (Long id); 
+    public void modificarAcercade (Acercade acer); 
 }

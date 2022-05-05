@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 @Service
 public class PersonaService implements IPersonaService{
     @Autowired
@@ -28,9 +29,8 @@ public class PersonaService implements IPersonaService{
        persoRepository.deleteById(id);
     }
 
-    @Override
-    public Persona findPersona(Long id) {
-       Persona perso = persoRepository.findById(id).orElse(null);
-       return perso;
+     @Override
+    public void modificarPersona(Persona perso) {
+        persoRepository.save(perso);
     }
 }

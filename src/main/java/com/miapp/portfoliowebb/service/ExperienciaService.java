@@ -29,9 +29,8 @@ public class ExperienciaService implements IExperienciaService{
     }
 
     @Override
-    public Experiencia findExperiencia(Long id) {
-         Experiencia exper = experRepository.findById(id).orElse(null);
-       return exper;
+    public void modificarExperiencia(Experiencia exper) {
+         experRepository.save(exper);
     }
      
      

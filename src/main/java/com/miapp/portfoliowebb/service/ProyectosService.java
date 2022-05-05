@@ -30,9 +30,8 @@ public class ProyectosService implements IProyectosService{
     }
 
     @Override
-    public Proyectos findProyectos(Long id) {
-         Proyectos proyect = proyectRepository.findById(id).orElse(null);
-       return proyect;
+    public void modificarProyectos(Proyectos proyect) {
+          proyectRepository.save(proyect);
     }
     
 }

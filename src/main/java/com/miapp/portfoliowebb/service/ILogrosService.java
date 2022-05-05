@@ -13,5 +13,5 @@ public interface ILogrosService {
     
     public void deleteLogros (Long id);
     
-    public Logros findLogros (Long id); 
+    public void modificarLogros (Logros logro); 
 }

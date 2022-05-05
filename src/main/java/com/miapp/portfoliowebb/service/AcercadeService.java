@@ -28,10 +28,9 @@ public class AcercadeService implements IAcercadeService{
          acerRepository.deleteById(id);
     }
 
-    @Override
-    public Acercade findAcercade(Long id) {
-        Acercade acer = acerRepository.findById(id).orElse(null);
-       return acer;
+   @Override
+    public void modificarAcercade(Acercade acer) {
+         acerRepository.save(acer);
     }
     
 }

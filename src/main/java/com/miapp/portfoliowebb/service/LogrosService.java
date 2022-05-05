@@ -29,10 +29,9 @@ public class LogrosService implements ILogrosService{
          logRepository.deleteById(id);
     }
 
-    @Override
-    public Logros findLogros(Long id) {
-        Logros logro = logRepository.findById(id).orElse(null);
-       return logro; 
+   @Override
+    public void modificarLogros(Logros logro) {
+         logRepository.save(logro);
     }
     
 }

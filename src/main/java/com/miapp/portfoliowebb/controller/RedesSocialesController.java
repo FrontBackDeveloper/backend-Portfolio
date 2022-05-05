@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -19,25 +20,25 @@ public class RedesSocialesController {
     private IRedesSocialesService interRedesSociales;
      
       @GetMapping ("/redessociales/traer")
+      @ResponseBody
     public List<RedesSociales> getRedesSociales(){
          return interRedesSociales.getRedesSociales();
     }
     @PostMapping ("/redessociales/crear")
-    public String createRedesSociales(@RequestBody RedesSociales red){
+    @ResponseBody
+    public void createRedesSociales(@RequestBody RedesSociales red){
         interRedesSociales.saveRedesSociales(red);
-        return "El registro fue creado correctamente";
+       
     }
     @DeleteMapping ("/redessociales/borrar/{id}")
-    public String deleteRedesSociales(@PathVariable Long id){
+    public void deleteRedesSociales(@PathVariable Long id){
         interRedesSociales.deleteRedesSociales(id);
-        return "El registro fue borrado correctamente";
+       
     }
-    @PutMapping ("/redessociales/editar/{id}")
-    public RedesSociales editRedesSociales (@PathVariable Long id,
-                                @RequestParam ("nombre") String nuevoNombreo,
-                                @RequestParam ("url") String nuevoUrl)
-    {
-        RedesSociales red = interRedesSociales.findRedesSociales(id);
-        return red;
+    @PutMapping ("/redessociales/crear")
+    @ResponseBody
+    public void modificarRedesSociales(@RequestBody RedesSociales red){
+        interRedesSociales.saveRedesSociales(red);
+       
     }
 }

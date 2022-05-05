@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -21,28 +22,24 @@ public class LogrosController {
     private ILogrosService interLogros;
     
     @GetMapping ("/logros/traer")
+    @ResponseBody
     public List<Logros> getLogros(){
          return interLogros.getLogros();
     }
     @PostMapping ("/logros/crear")
-    public String createLogros(@RequestBody Logros logro){
+     @ResponseBody
+    public void createLogros(@RequestBody Logros logro){
         interLogros.saveLogros(logro);
-        return "El registro fue creado correctamente";
+       
     }
     @DeleteMapping ("/logros/borrar/{id}")
-    public String deleteLogros(@PathVariable Long id){
+    public void deleteLogros(@PathVariable Long id){
         interLogros.deleteLogros(id);
-        return "El registro fue borrado correctamente";
+       
     }
-    @PutMapping ("/logros/editar/{id}")
-    public Logros editLogros (@PathVariable Long id,
-                                @RequestParam ("titulo") String nuevoTitulo,
-                                @RequestParam ("institucion") String nuevoInstitucion,
-                                @RequestParam ("lugar") String nuevoLugar,
-                                @RequestParam ("Fecha") String nuevofecha,
-                                @RequestParam ("imagen") String nuevoImagen)
-    {
-        Logros logro = interLogros.findLogros(id);
-        return logro;
-    }    
+     @PutMapping ("/logros/editar")
+     @ResponseBody
+    public void modificarLogros(@RequestBody Logros logro){
+        interLogros.saveLogros(logro);
+    }
 }

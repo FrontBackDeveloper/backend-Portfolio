@@ -29,10 +29,9 @@ public class RedesSocialesService implements IRedesSocialesService{
           redRepository.deleteById(id);
     }
 
-    @Override
-    public RedesSociales findRedesSociales(Long id) {
-         RedesSociales red = redRepository.findById(id).orElse(null);
-       return red;
+   @Override
+    public void modificarRedesSociales(RedesSociales red) {
+        redRepository.save(red);
     }
      
      

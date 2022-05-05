@@ -13,5 +13,5 @@ public interface IFormacionService {
     
     public void deleteFormacion (Long id);
     
-    public Formacion findFormacion (Long id); 
+    public void modificarFormacion (Formacion edu); 
 }

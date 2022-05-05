@@ -28,10 +28,9 @@ public class FormacionService implements IFormacionService {
        eduRepository.deleteById(id);
     }
 
-    @Override
-    public Formacion findFormacion(Long id) {
-       Formacion edu = eduRepository.findById(id).orElse(null);
-       return edu;
+   @Override
+    public void modificarFormacion(Formacion edu) {
+        eduRepository.save(edu);
     }
 
   

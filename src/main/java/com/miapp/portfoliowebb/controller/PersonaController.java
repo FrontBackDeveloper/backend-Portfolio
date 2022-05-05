@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -21,10 +22,12 @@ public class PersonaController {
     private IPersonaService interPersona;
     
     @GetMapping ("/personas/traer")
+    @ResponseBody
     public List<Persona> getPersonas(){
          return interPersona.getPersonas();
     }
     @PostMapping ("/personas/crear")
+    @ResponseBody
     public String createPersona(@RequestBody Persona perso){
         interPersona.savePersona(perso);
         return "La persona fue creada correctamente";
@@ -34,13 +37,11 @@ public class PersonaController {
         interPersona.deletePersona(id);
         return "La persona fue borrada correctamente";
     }
-    @PutMapping ("/personas/editar/{id}")
-    public Persona editPersona (@PathVariable Long id,
-                                @RequestParam ("nombre") String nuevoNombre,
-                                @RequestParam ("apellido") String nuevoApellido,
-                                @RequestParam ("edad") int nuevaEdad){
-        Persona perso = interPersona.findPersona(id);
-        return perso;
+    @PutMapping ("/personas/editar")
+  
+    public void modificarPersona(@RequestBody Persona perso){
+        interPersona.savePersona(perso);
+       
     }
             
        

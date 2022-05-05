@@ -13,5 +13,5 @@ public interface IAptitudesService {
     
     public void deleteAptitudes (Long id);
     
-    public Aptitudes findAptitudes (Long id);    
+    public void modificarAptitudes (Aptitudes aptitud);   
 }

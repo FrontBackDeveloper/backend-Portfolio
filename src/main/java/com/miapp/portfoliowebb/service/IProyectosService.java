@@ -12,5 +12,5 @@ public interface IProyectosService {
     
     public void deleteProyectos (Long id);
     
-    public Proyectos findProyectos (Long id); 
+    public void modificarProyectos (Proyectos edu); 
 }

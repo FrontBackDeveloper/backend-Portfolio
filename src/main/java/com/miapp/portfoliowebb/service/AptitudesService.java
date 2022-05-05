@@ -30,9 +30,8 @@ public class AptitudesService implements IAptitudesService{
     }
 
     @Override
-    public Aptitudes findAptitudes(Long id) {
-        Aptitudes aptitud = aptiRepository.findById(id).orElse(null);
-       return aptitud;
+    public void modificarAptitudes(Aptitudes aptitud) {
+        aptiRepository.save(aptitud);
     }
     
     
