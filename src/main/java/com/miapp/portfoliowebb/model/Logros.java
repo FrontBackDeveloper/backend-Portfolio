@@ -21,7 +21,7 @@ public class Logros {
     private String lugar;
     private String fecha;
     private String imagen;
-     private String url;
+    private String url;
 
     public Logros() {
     }
