@@ -35,7 +35,7 @@ public class AptitudesController {
         interAptitudes.deleteAptitudes(id);
        
     }
-   @PostMapping ("/aptitudes/editar")
+   @PutMapping ("/aptitudes/editar")
    
     public void modificarAptitudes(@RequestBody Aptitudes aptitud){
         interAptitudes.saveAptitudes(aptitud);

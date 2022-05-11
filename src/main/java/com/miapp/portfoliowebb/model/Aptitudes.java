@@ -16,17 +16,17 @@ public class Aptitudes {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;
     private String titulo;
-    private String tipo;
     private String nivel;
+   
 
     public Aptitudes() {
     }
 
-    public Aptitudes(long id, String titulo, String tipo, String nivel) {
+    public Aptitudes(long id, String titulo, String nivel) {
         this.id = id;
         this.titulo = titulo;
-        this.tipo = tipo;
         this.nivel = nivel;
+       
     }
    
 }
