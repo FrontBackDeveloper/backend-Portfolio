@@ -18,29 +18,33 @@ public class Persona {
     private String nombrecompleto;
     private int edad;
     private String puesto;
-    private String titulosecundario;
+    private String titulo;
     private String fotoperfil;
     private String ciudad;
     private String pais;
     private String email;
     private String telefono;
     private String hobby;
+    private String descripcion;
     
     public Persona() {
     }
 
-    public Persona(Long id, String nombrecompleto, int edad, String puesto, String titulosecundario, String fotoperfil, String ciudad, String pais, String email, String telefono, String hobby) {
+    public Persona(Long id, String nombrecompleto, int edad, String puesto, String titulo,
+                    String fotoperfil, String ciudad, String pais, String email,
+                    String telefono, String hobby, String descripcion) {
         this.id = id;
         this.nombrecompleto = nombrecompleto;
         this.edad = edad;
         this.puesto = puesto;
-        this.titulosecundario = titulosecundario;
+        this.titulo = titulo;
         this.fotoperfil = fotoperfil;
         this.ciudad = ciudad;
         this.pais = pais;
         this.email = email;
         this.telefono = telefono;
         this.hobby = hobby;
+        this.descripcion = descripcion;
     }
 
     

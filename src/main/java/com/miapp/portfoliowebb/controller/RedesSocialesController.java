@@ -35,8 +35,8 @@ public class RedesSocialesController {
         interRedesSociales.deleteRedesSociales(id);
        
     }
-    @PutMapping ("/redessociales/crear")
-    @ResponseBody
+    @PutMapping ("/redessociales/editar")
+   
     public void modificarRedesSociales(@RequestBody RedesSociales red){
         interRedesSociales.saveRedesSociales(red);
        

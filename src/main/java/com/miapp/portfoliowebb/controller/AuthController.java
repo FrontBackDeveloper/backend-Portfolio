@@ -19,7 +19,7 @@ public class AuthController {
         return service.isUserEnabled(userDto);
     } 
     
-    @PostMapping("/register")
+    @PostMapping("/registro")
     public void register(@RequestBody Usuario usuario) throws Exception {
         service.crearUsuario(usuario);
     }
